@@ -1,7 +1,5 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
-import org.jetbrains.kotlin.gradle.plugin.mpp.apple.XCFramework
-
 plugins {
     alias(libs.plugins.maven.publish)
     alias(libs.plugins.android.library)
@@ -19,14 +17,14 @@ kotlin {
         }
     }
     
-    val xcf = XCFramework()
+    /*val xcf = XCFramework()
     listOf(iosX64(), iosArm64(), iosSimulatorArm64()).forEach {
         it.binaries.framework {
             xcf.add(this)
             isStatic = true
             baseName = "shared"
         }
-    }
+    }*/
 
     sourceSets {
         commonMain.dependencies {
@@ -38,7 +36,7 @@ kotlin {
 }
 
 publishing.publications.withType<MavenPublication> {
-    version = "0.0.0.1"
+    version = "0.0.0.2"
     groupId = "com.easyapps"
     artifactId = "kmputils"
 }
