@@ -9,6 +9,10 @@ plugins {
 }
 
 kotlin {
+    iosX64()
+    iosArm64()
+    iosSimulatorArm64()
+
     androidTarget().compilations.all {
         compileTaskProvider.configure {
             compilerOptions {
@@ -16,15 +20,6 @@ kotlin {
             }
         }
     }
-    
-    /*val xcf = XCFramework()
-    listOf(iosX64(), iosArm64(), iosSimulatorArm64()).forEach {
-        it.binaries.framework {
-            xcf.add(this)
-            isStatic = true
-            baseName = "shared"
-        }
-    }*/
 
     sourceSets {
         commonMain.dependencies {
@@ -36,7 +31,7 @@ kotlin {
 }
 
 publishing.publications.withType<MavenPublication> {
-    version = "0.0.0.3"
+    version = "0.0.1"
     groupId = "com.easyapps"
     artifactId = "kmputils"
 }
