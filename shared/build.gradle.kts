@@ -36,7 +36,7 @@ kotlin {
 }
 
 publishing.publications.withType<MavenPublication> {
-    version = "0.0.0.2"
+    version = "0.0.0.3"
     groupId = "com.easyapps"
     artifactId = "kmputils"
 }
